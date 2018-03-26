@@ -1,31 +1,39 @@
-1. feature engineering
-   autoencoder
-   data transform (to normal distribution(log, box-cox), scale, shift...)
-   fill missing data
-   data outliers
-   feature correlation with each other and with independent variable
-   generate new feature
-   choose relevent feature
-   data augmentation
+1. Data cleaning
+   (1) Fill missing data
+       drop, meaning imputation, educated guess, knn imputation
+   (2) Remove outliers, unrealistic data
 
-2. Model grid search for best hyperparameters
+2. Feature engineering
+   (1) Data transform (for skewed continuous data)
+       to normal distribution(log, box-cox), scale, shift
+   (2) Feature correlation with each other and with independent variable
+       Univariate, multi-variate plots, pair plots, box plots ...
+   (3) Dummies variables or one-hot encoding for categorical variables 
+   (4) Select important features based on a fast evaluation model, eg: random forest
+   (5) Generate new feature: combine several features based on knowledge
+   (6) Use autoencoder,principal component analysis to extract new set of features
 
-3. Build model
-   (1) k fold cross-validation
-   (2) Linear model:
-       logistic regression
-       linear, ridge, kernel ridge, lasso, elastic net regression
-       Tree based model:
-       decision tree, random forest, adaboost, gradient boost(XGBoost, Lightgbm) 
+3. Unbalanced data
+   (1) Upsampling, data augmentation
+   (2) Downsampling
+
+4. Build model
+   (1) Use k fold cross-validation technique
+   (2) Linear model: logistic regression, (linear, ridge, kernel ridge, lasso, elastic net) regression
+       Tree based model: decision tree, random forest, adaboost, gradient boost(XGBoost, Lightgbm, CatBoost) 
        Support vector machine
        Factorization machine
-       Neural network
-       Bayers model
+       Neural network: deep neural network, CNN, RNN ...
+       Naive Bayers
        Linear (Quadratic) discriminate analysis
-       PCA
-       KNN
-       K-means clustering
-    (3) if target variable is unevenly distributed, use f1 score instead of accuracy(can use confusion matrix, roc curve)
+       K nearest neighbor
+       Unsupervised: PCA, K-means clustering
+   (3) Stacked model: try and error to combine several simple models
+   (4) Evaluation metrics: accuracy, mse, f1 score, confusion matrix, roc curve(auc), log loss, IoU
 
-4. How to deal with unbalanced data?
-   oversampling and undersampling
+5. Model hyperparameter selection
+   (1) Grid base search
+
+6. Semi-supervised learning to deal with large amount of unlabeled data
+   (1) GAN
+   (2) Pseudo-labeling
