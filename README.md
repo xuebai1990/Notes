@@ -1,2 +1,2 @@
 # Notes
-Some notes in learning
+Some notes while learning machine learning and data science
