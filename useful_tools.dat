@@ -1,0 +1,10 @@
+1. pandas on ray
+   (1) Use same syntax as pandas
+   (2) Can run distributed calculation
+
+2. dark
+   (1) Almost same syntax as pandas, run distributed calculation
+
+3. pyspark
+   python interface of spark
+
