@@ -1,11 +1,14 @@
 1. Data cleaning
    (1) Fill missing data
-       drop, meaning imputation, educated guess, knn imputation
+       First figure out why it is missing? Data are not recorded or data don't exist? 
+       drop, mean imputation, educated guess, knn imputation
    (2) Remove outliers, unrealistic data
 
 2. Feature engineering
-   (1) Data transform (for skewed continuous data)
-       to normal distribution(log, box-cox), scale, shift
+   (1) *Data scaling: change the range of data, useful when the method is based on distance, like SVM and kNN, the shape of the data won't change.
+       *Data normalization: change the data so that it has a normal distribution (for skewed continuous data), useful when the underlying methods 
+       assume normal distribution, like t-tests, ANOVA, linear regression, linear discriminant analysis, Gaussian Naive Bayes,
+       can use Box-Cox and log transformation
    (2) Feature correlation with each other and with independent variable
        Univariate, multi-variate plots, pair plots, box plots ...
    (3) Dummies variables or one-hot encoding for categorical variables 
