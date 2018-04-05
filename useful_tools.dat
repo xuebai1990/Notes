@@ -8,3 +8,9 @@
 3. pyspark
    python interface of spark
 
+4. chardet
+   can be used to detect text encoding
+
+5. fuzzywuzzy
+   can be used to detect fuzzy match of a list of word to a target word
+ 
