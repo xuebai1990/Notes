@@ -1,0 +1,11 @@
+How to deal with Features having high cardinality?
+
+1. For non-linear algorithms like RF you can also replace a categorical variable by the number of times it appears in the train set. This turns it into a single feature.
+
+2. one hot encode a subset of the unique feature values
+keep the ones which appear most often or which appear more then threshold times
+drop the others or encode them as a special value
+
+3. apply the "hashing trick"
+
+4. If you can make one-hot encoding fit into your memory, you can consider first applying one-hot encoding, and then apply some dimensional reduction method (like PCA) or embedding method (word2Vec, etc) to reduce the dimension, before you fit them into any ML algorithm.
